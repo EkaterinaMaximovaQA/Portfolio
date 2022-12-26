@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "07e6b991-d131-47b0-942d-874d8e4a34d5",
+		"name": "Yandex Samokat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22710821"
+	},
+	"item": [
+		{
+			"name": "получение данных о заказе",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://90de468f-244a-41d1-a26e-c93c02421782.serverhub.praktikum-services.ru/v1/orders/track?t=226096",
+					"protocol": "https",
+					"host": [
+						"90de468f-244a-41d1-a26e-c93c02421782",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"v1",
+						"orders",
+						"track"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "226096"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "создание заказа",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Руслана\",\r\n    \"lastName\": \"Людмилина\",\r\n    \"address\": \"Красноармейская улица дом 6 корпус 6 литер А\",\r\n    \"metroStation\": 4,\r\n    \"phone\": \"+7 800 355 35 35\",\r\n    \"rentTime\": 1,\r\n    \"deliveryDate\": \"2022-11-23\",\r\n    \"comment\": \"Везите скорее очень надо кататься прям вот срочно\",\r\n    \"color\": [\r\n        \"BLACK\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e5b850b2-ba93-4912-b2b9-c6c1283d527c.serverhub.praktikum-services.ru/api/v1/orders",
+					"protocol": "https",
+					"host": [
+						"e5b850b2-ba93-4912-b2b9-c6c1283d527c",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "принятие заказа курьером",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://6dec7389-7929-4fe7-a752-c4e1bd042e75.serverhub.praktikum-services.ru/api/v1/orders/accept/1?courierId=1",
+					"protocol": "https",
+					"host": [
+						"6dec7389-7929-4fe7-a752-c4e1bd042e75",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"accept",
+						"1"
+					],
+					"query": [
+						{
+							"key": "courierId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " создание курьера",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"Fr\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"R\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://e5b850b2-ba93-4912-b2b9-c6c1283d527c.serverhub.praktikum-services.ru/api/v1/courier",
+					"protocol": "https",
+					"host": [
+						"e5b850b2-ba93-4912-b2b9-c6c1283d527c",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"courier"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "151b845a-001c-42f2-80fe-0305c28297ea",
+		"name": "Yandex Lavka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22710821"
+	},
+	"item": [
+		{
+			"name": "получить список наборов в карточке",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{test_test}}api/v1/kits?cardId=1",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"v1",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать пустой набор,привязанный к карточке",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": 1, \r\n    \"name\": \"В космосс\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_test}}api/v1/kits",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"v1",
+						"kits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список наборов по продуктам",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\": [\r\n        1,\r\n        22\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_test}}api/v1/products/kits",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"v1",
+						"products",
+						"kits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список продуктов по имени набора",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{test_test}}api/v1/kits/search?name=В%20космосс",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"v1",
+						"kits",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "В%20космосс"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Переименовать созданный ранее  набор",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Переименованный набор\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_test}}api/v1/kits/8",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"v1",
+						"kits",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление созданного набора",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{test_test}}api/v1/kits/7",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"v1",
+						"kits",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "получение логов",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{test_test}}api/logs/main",
+					"host": [
+						"{{test_test}}api"
+					],
+					"path": [
+						"logs",
+						"main"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "добавление существующих продуктов в существующий набор",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": 61,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_test}}/api/v1/kits/5/products",
+					"host": [
+						"{{test_test}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"5",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Поиск наборов по продуктам",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\": [\r\n        34,\r\n        39\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_test}}/api/v1/products/kits",
+					"host": [
+						"{{test_test}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"kits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "проверяем есть ли пролукты на складе",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{test_test}}/api/v1/warehouses/check",
+					"host": [
+						"{{test_test}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"warehouses",
+						"check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
